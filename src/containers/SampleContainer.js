@@ -27,11 +27,11 @@ const SampleContainer = ({
 };
 
 export default connect(
-  ({ sample }) => ({
+  ({ sample, loading }) => ({
     post: sample.post,
     users: sample.users,
-    loadingPost: sample.loading.GET_POST,
-    loadingUSers: sample.loading.GET_USERSs,
+    loadingPost: loading["sample/GET_POST"],
+    loadingUSers: loading["sample/GET_USERS"],
   }),
   {
     getPost,
