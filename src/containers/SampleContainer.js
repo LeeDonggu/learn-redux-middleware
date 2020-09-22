@@ -13,8 +13,16 @@ const SampleContainer = ({
   loadingUSers,
 }) => {
   useEffect(() => {
-    getPost(1);
-    getUsers(1);
+    const fn = async () => {
+      try {
+        await getPost(1);
+        await getUsers(1);
+      } catch (e) {
+        console.log(e); // 에러 조회
+      }
+    };
+
+    fn();
   }, [getPost, getUsers]);
   return (
     <Sample
